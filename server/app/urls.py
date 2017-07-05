@@ -15,8 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework import routers
+
+import geral.views as g_v
+
+r = routers.DefaultRouter()
+r.register(r'tenants', g_v.TenantView)
+r.register(r'empresas', g_v.EmpresaView)
+r.register(r'estabelecimentos', g_v.EstabelecimentoView)
+r.register(r'pessoas', g_v.PessoaView)
+r.register(r'perfil-pessoa', g_v.PerfilPessoaView)
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^', include(r.urls)),
 ]
