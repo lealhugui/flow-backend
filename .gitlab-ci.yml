@@ -25,7 +25,6 @@ before_script:
   # Uncomment next line if your Django app needs a JS runtime:
   # - apt-get update -q && apt-get install nodejs -yqq
   - pwd
-  - ll
   - cd server
   - pip install -r requirements.txt
 
@@ -50,5 +49,4 @@ test:
     DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
   script:
   - pwd
-  - ll
   - python manage.py test --settings app.settings_ci
