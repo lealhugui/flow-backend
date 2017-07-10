@@ -21,10 +21,10 @@ from rest_framework.authtoken import views
 import geral.views as g_v
 
 r = routers.DefaultRouter()
-r.register(r'tenants', g_v.TenantView)
-r.register(r'empresas', g_v.EmpresaView)
-r.register(r'estabelecimentos', g_v.EstabelecimentoView)
-r.register(r'pessoas', g_v.PessoaView)
+r.register(r'tenant', g_v.TenantView)
+r.register(r'empresa', g_v.EmpresaView)
+r.register(r'estabelecimento', g_v.EstabelecimentoView)
+r.register(r'pessoa', g_v.PessoaView)
 r.register(r'perfil-pessoa', g_v.PerfilPessoaView)
 
 
